@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:'Zen Kaku Gothic New',sans-serif;color:#34464F;background:#dfeaf1;background:linear-gradient(160deg,#e8f1f7,#eef4ee);-webkit-font-smoothing:antialiased;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @keyframes pulseShadow{0%,100%{box-shadow:0 12px 26px rgba(90,175,224,.34)}50%{box-shadow:0 16px 34px rgba(143,203,127,.42)}}
+
+  /* ===== RESPONSIVE: tablet / desktop ===== */
+  @media (min-width:900px){
+    [data-lp-root]{max-width:1060px !important;padding-bottom:48px !important;}
+    [data-lp-hero]{display:grid !important;grid-template-columns:1.04fr .96fr !important;gap:44px !important;align-items:center !important;padding:60px 56px 68px !important;}
+    [data-lp-hero-text] h1{font-size:48px !important;}
+    [data-lp-hero-media]{margin-top:0 !important;border-radius:26px !important;}
+    [data-lp-hero-media] img{height:460px !important;}
+    [data-lp-offer]{margin-top:0 !important;padding:0 56px 8px !important;}
+    [data-lp-offer-card]{max-width:600px;margin:0 auto;}
+    [data-lp-sec]{padding-left:48px !important;padding-right:48px !important;}
+    [data-lp-reasons-grid]{display:grid !important;grid-template-columns:repeat(3,1fr) !important;gap:22px !important;}
+    [data-lp-reasons-grid] > div{flex-direction:column !important;border-bottom:none !important;background:#fff;border:1px solid #eef3f6;border-radius:18px;padding:28px 24px !important;box-shadow:0 8px 22px rgba(70,120,150,.07);}
+    [data-lp-menu-grid]{display:grid !important;grid-template-columns:repeat(3,1fr) !important;align-items:stretch !important;}
+    [data-lp-faq-grid]{display:grid !important;grid-template-columns:1fr 1fr !important;gap:12px !important;align-items:start !important;}
+    [data-lp-narrow]{max-width:720px !important;margin-left:auto !important;margin-right:auto !important;}
+    [data-lp-price-wrap]{max-width:760px;margin-left:auto;margin-right:auto;}
+    [data-lp-access] > [data-reveal]{max-width:660px;margin-left:auto;margin-right:auto;}
+    [data-sticky-cta]{display:none !important;}
+  }
+</style>
+</helmet>
+<div data-screen-label="疲労回復LP" data-lp-root style="max-width:480px;margin:0 auto;background:#FDFEFF;position:relative;overflow:hidden;padding-bottom:92px;box-shadow:0 0 60px rgba(60,90,110,.12);">
+
+  <!-- ===== TOP HEADER ===== -->
+  <header style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:11px 18px;background:rgba(253,254,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #edf3f7;">
+    <img src="assets/logo.png" alt="目黒駅前ネスト整形外科" style="height:26px;width:auto;">
+    <a href="#access" style="display:flex;align-items:center;gap:5px;text-decoration:none;font-size:11px;font-weight:700;color:#3E8FC4;letter-spacing:.02em;">
+      <span style="font-size:9px;color:#8aa3b0;font-weight:500;">目黒駅 東口 徒歩2分</span>
+      <span style="font-size:15px;letter-spacing:.01em;">03-5422-8596</span>
+    </a>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section data-screen-label="ヒーロー" data-lp-hero style="position:relative;padding:30px 22px 0;background:linear-gradient(180deg,#eaf4fb 0%,#f3f9f4 60%,#FDFEFF 100%);overflow:hidden;">
+    <img src="assets/bg-droplet.png" alt="" aria-hidden="true" style="position:absolute;top:0;right:-40px;width:78%;opacity:.5;pointer-events:none;mix-blend-mode:multiply;">
+    <div data-lp-hero-text style="position:relative;">
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;">
+        <span style="font-size:11px;font-weight:700;color:#3E8FC4;background:#fff;border:1px solid #d7e8f3;border-radius:999px;padding:5px 11px;">目黒駅 徒歩2分</span>
+        <span style="font-size:11px;font-weight:700;color:#5AA05E;background:#fff;border:1px solid #d8ead2;border-radius:999px;padding:5px 11px;">夜19時まで</span>
+        <span style="font-size:11px;font-weight:700;color:#D67896;background:#fff;border:1px solid #f3dbe4;border-radius:999px;padding:5px 11px;">祝日も診療</span>
+      </div>
+      <h1 style="font-family:'Zen Old Mincho',serif;font-weight:700;font-size:35px;line-height:1.42;letter-spacing:.01em;color:#2f444f;text-wrap:balance;">だるさに、<br>まず2,480円。</h1>
+      <p style="margin-top:14px;font-size:15px;font-weight:500;line-height:1.7;color:#5d717c;">目黒駅 東口から徒歩2分・19時まで・祝日も診療。<br>医師が診る、疲労回復点滴。</p>
+    </div>
+    <div data-lp-hero-media style="position:relative;margin-top:22px;border-radius:20px 20px 0 0;overflow:hidden;">
+      <img src="assets/woman-concern.png" alt="疲労回復点滴" style="width:100%;height:300px;object-fit:cover;object-position:30% 35%;">
+    </div>
+  </section>
+
+  <!-- ===== OFFER CARD ===== -->
+  <section data-lp-offer style="position:relative;padding:0 18px;margin-top:-46px;z-index:5;">
+    <div data-reveal data-lp-offer-card style="background:#fff;border-radius:22px;padding:24px 22px 22px;box-shadow:0 18px 40px rgba(70,120,150,.16);border:1px solid #eef4f8;">
+      <div style="display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:6px 14px;letter-spacing:.04em;">初回限定キャンペーン</div>
+      <div style="margin-top:14px;font-size:19px;font-weight:700;color:#34464F;">疲労回復点滴ライト</div>
+      <div style="display:flex;align-items:flex-end;gap:8px;margin-top:4px;">
+        <span style="font-size:13px;font-weight:700;color:#8aa3b0;padding-bottom:9px;">初回</span>
+        <span style="font-family:'Zen Kaku Gothic New';font-size:54px;font-weight:900;line-height:1;color:#3E8FC4;letter-spacing:-.01em;">2,480</span>
+        <span style="font-size:18px;font-weight:700;color:#3E8FC4;padding-bottom:6px;">円</span>
+        <span style="font-size:13px;color:#9bafba;padding-bottom:8px;">通常 <s>3,500円</s>・税込</span>
+      </div>
+      <p style="margin-top:8px;font-size:11.5px;color:#94a8b2;line-height:1.6;">※点滴が初めての方限定／お一人様1回</p>
+      <div style="display:flex;flex-direction:column;gap:11px;margin-top:18px;">
+        <a href="#access" data-cta="primary" style="display:flex;align-items:center;justify-content:center;gap:9px;height:60px;border-radius:999px;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;font-size:18px;font-weight:700;text-decoration:none;box-shadow:0 12px 26px rgba(90,175,224,.34);animation:pulseShadow 3.2s ease-in-out infinite;">
+          <span style="font-size:13px;opacity:.9;">▶</span> WEB予約はこちら
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3 REASONS ===== -->
+  <section data-screen-label="選ばれる理由" data-lp-sec style="padding:54px 22px 8px;">
+    <div data-reveal style="text-align:center;margin-bottom:30px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.18em;color:#7FB86E;">REASON</div>
+      <h2 style="font-family:'Zen Old Mincho',serif;font-size:25px;font-weight:700;margin-top:8px;color:#2f444f;">選ばれる3つの理由</h2>
+    </div>
+
+    <div data-lp-reasons-grid>
+    <div data-reveal style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid #eef3f6;">
+      <div style="flex:0 0 auto;width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Zen Old Mincho',serif;font-size:20px;font-weight:700;box-shadow:0 8px 18px rgba(90,175,224,.28);">01</div>
+      <div>
+        <h3 style="font-size:16.5px;font-weight:700;color:#34464F;line-height:1.5;">整形外科だから、体のことも相談できる</h3>
+        <p style="margin-top:7px;font-size:13.5px;line-height:1.85;color:#657983;">当院は整形外科・リハビリテーション科を併設。疲労や肩こり、スポーツ後の体のケアまで、医師が体調を確認したうえで点滴を行います。「ただの栄養点滴」ではなく、医療として受けられる安心があります。</p>
+      </div>
+    </div>
+
+    <div data-reveal style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid #eef3f6;">
+      <div style="flex:0 0 auto;width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Zen Old Mincho',serif;font-size:20px;font-weight:700;box-shadow:0 8px 18px rgba(90,175,224,.28);">02</div>
+      <div>
+        <h3 style="font-size:16.5px;font-weight:700;color:#34464F;line-height:1.5;">目黒駅2分、夜19時まで・祝日も</h3>
+        <p style="margin-top:7px;font-size:13.5px;line-height:1.85;color:#657983;">1階のファミリーマートが目印。仕事帰りや予定の前にも立ち寄りやすい立地と診療時間です。点滴は短時間で、ダウンタイムもほとんどありません。</p>
+      </div>
+    </div>
+
+    <div data-reveal style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;">
+      <div style="flex:0 0 auto;width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Zen Old Mincho',serif;font-size:20px;font-weight:700;box-shadow:0 8px 18px rgba(90,175,224,.28);">03</div>
+      <div>
+        <h3 style="font-size:16.5px;font-weight:700;color:#34464F;line-height:1.5;">経口では届かない量を、血管へ直接</h3>
+        <p style="margin-top:7px;font-size:13.5px;line-height:1.85;color:#657983;">疲労回復に関わるビタミンB群などを点滴で直接補給。食事やサプリでは補いにくい量を、効率よく体内へ届けることが期待できます。</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ===== DOCTOR TRUST ===== -->
+  <section style="padding:8px 22px 4px;">
+    <div data-reveal data-lp-narrow style="display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,#eef6fb,#f1f7ee);border-radius:20px;padding:18px;border:1px solid #e7f0f5;">
+      <img src="assets/doctor.jpg" alt="院長 今本多計臣" style="flex:0 0 auto;width:92px;height:92px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 6px 16px rgba(70,120,150,.18);">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:#7FB86E;">DOCTOR</div>
+        <p style="margin-top:4px;font-size:13.5px;line-height:1.8;color:#4a5d67;font-weight:500;">「お一人おひとりの体調を診てから、点滴を選びます。」<br><span style="font-size:12.5px;color:#8194a0;font-weight:500;">院長・今本多計臣</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 白玉点滴とは ===== -->
+  <section data-screen-label="疲労回復点滴とは" style="position:relative;margin-top:48px;padding:52px 22px 46px;background:linear-gradient(180deg,#f3f9fc,#fbf6f8);overflow:hidden;">
+    <img src="assets/bg-water.png" alt="" aria-hidden="true" style="position:absolute;bottom:0;left:0;width:100%;opacity:.4;pointer-events:none;">
+    <div data-lp-narrow style="position:relative;">
+      <div data-reveal style="text-align:center;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.18em;color:#5AAFE0;">RECOVERY IV</div>
+        <h2 style="font-family:'Zen Old Mincho',serif;font-size:25px;font-weight:700;margin-top:10px;line-height:1.55;color:#2f444f;">疲労回復点滴とは</h2>
+        <p style="margin-top:10px;font-size:15px;font-weight:600;color:#4a5d67;line-height:1.7;">だるさ・重さが残る、<br>毎日の回復をサポート。</p>
+      </div>
+      <div data-reveal style="margin-top:22px;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(70,120,150,.16);">
+        <img src="assets/woman-menu.png" alt="疲労回復点滴" style="width:100%;height:210px;object-fit:cover;object-position:50% 30%;">
+      </div>
+      <p data-reveal style="margin-top:22px;font-size:14px;line-height:1.95;color:#5d717c;"><strong style="color:#3E8FC4;font-weight:700;">ビタミンB群</strong>を中心に、エネルギー代謝に関わる成分を配合した点滴です。仕事の疲れが抜けない、スポーツの後の重さが気になる、そんなときに体の内側からの回復をサポートします。忙しい毎日を元気に乗り切りたい方におすすめです。</p>
+
+      <div data-reveal style="margin-top:26px;background:#fff;border-radius:20px;padding:22px;box-shadow:0 8px 22px rgba(70,120,150,.1);border:1px solid #eef4f8;">
+        <div style="font-size:14px;font-weight:700;color:#7FB86E;margin-bottom:14px;">こんな方におすすめ</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:11px;">
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6;color:#4a5d67;"><span style="flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px;">✓</span>疲れやだるさが抜けにくい</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6;color:#4a5d67;"><span style="flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px;">✓</span>顔色が悪い・元気がないと言われる</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6;color:#4a5d67;"><span style="flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px;">✓</span>スポーツや立ち仕事の後の重さが気になる</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6;color:#4a5d67;"><span style="flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px;">✓</span>忙しく、栄養バランスのとれた食事が難しい</li>
+        </ul>
+      </div>
+
+      <div data-reveal style="margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);border-radius:18px;padding:18px 22px;color:#fff;box-shadow:0 12px 26px rgba(90,175,224,.3);">
+        <div>
+          <div style="font-size:12px;opacity:.9;">初回限定</div>
+          <div style="font-size:13px;font-weight:500;opacity:.85;text-decoration:line-through;">通常 3,500円</div>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:4px;">
+          <span style="font-size:36px;font-weight:900;line-height:1;">2,480</span>
+          <span style="font-size:15px;font-weight:700;padding-bottom:3px;">円(税込)</span>
+        </div>
+      </div>
+      <p data-reveal style="margin-top:12px;font-size:12.5px;color:#8194a0;line-height:1.7;">所要時間：約10〜15分／ダウンタイムほぼなし。効果には個人差があります。継続して受けることで、コンディションを整えやすくなります。</p>
+    </div>
+  </section>
+
+  <!-- ===== ほかのメニュー ===== -->
+  <section data-screen-label="その他メニュー" data-lp-sec style="padding:52px 22px 10px;">
+    <div data-reveal style="text-align:center;margin-bottom:24px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.18em;color:#7FB86E;">MENU</div>
+      <h2 style="font-family:'Zen Old Mincho',serif;font-size:24px;font-weight:700;margin-top:8px;color:#2f444f;">美容点滴もあります</h2>
+    </div>
+
+    <div data-reveal data-lp-menu-grid style="display:flex;flex-direction:column;gap:14px;">
+      <div style="background:#fff;border-radius:18px;padding:20px;border:1px solid #eef4f8;box-shadow:0 6px 18px rgba(70,120,150,.08);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;">
+          <h3 style="font-size:16px;font-weight:700;color:#34464F;">白玉点滴</h3>
+          <div style="flex:0 0 auto;text-align:right;"><span style="font-size:22px;font-weight:900;color:#3E8FC4;">3,980</span><span style="font-size:12px;font-weight:700;color:#3E8FC4;">円</span></div>
+        </div>
+        <div style="font-size:11px;color:#9bafba;margin-top:2px;">初回（通常 6,500円・税込）</div>
+        <p style="margin-top:9px;font-size:13px;line-height:1.75;color:#657983;">抗酸化成分グルタチオン配合。シミ・くすみが気になる方、肌のトーンを整えたい方に。</p>
+      </div>
+
+      <div style="background:#fff;border-radius:18px;padding:20px;border:1px solid #eef4f8;box-shadow:0 6px 18px rgba(70,120,150,.08);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;">
+          <h3 style="font-size:16px;font-weight:700;color:#34464F;">高濃度ビタミンC点滴</h3>
+          <div style="flex:0 0 auto;text-align:right;"><span style="font-size:22px;font-weight:900;color:#3E8FC4;">8,800</span><span style="font-size:12px;font-weight:700;color:#3E8FC4;">円</span></div>
+        </div>
+        <div style="font-size:11px;color:#9bafba;margin-top:2px;">初回（通常 12,000円・税込）</div>
+        <p style="margin-top:9px;font-size:13px;line-height:1.75;color:#657983;">高濃度のビタミンCを直接補給。美肌・紫外線対策とコンディション維持を意識したい方に。</p>
+      </div>
+
+      <div style="background:#fff;border-radius:18px;padding:20px;border:1px solid #eef4f8;box-shadow:0 6px 18px rgba(70,120,150,.08);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;">
+          <h3 style="font-size:16px;font-weight:700;color:#34464F;">二日酔い点滴</h3>
+          <div style="flex:0 0 auto;text-align:right;"><span style="font-size:22px;font-weight:900;color:#3E8FC4;">5,500</span><span style="font-size:12px;font-weight:700;color:#3E8FC4;">円</span></div>
+        </div>
+        <div style="font-size:11px;color:#9bafba;margin-top:2px;">通常価格（税込）</div>
+        <p style="margin-top:9px;font-size:13px;line-height:1.75;color:#657983;">飲み会の翌日や、大事な予定の前のリセットに。</p>
+      </div>
+    </div>
+    <p data-reveal style="margin-top:13px;font-size:11.5px;color:#94a8b2;line-height:1.6;">※初回価格はお一人様1回・1メニューのみ適用となります。</p>
+  </section>
+
+  <!-- ===== 施術の流れ ===== -->
+  <section data-screen-label="施術の流れ" style="position:relative;margin-top:44px;padding:52px 22px;background:linear-gradient(180deg,#eef6fb,#f2f8ee);overflow:hidden;">
+    <div data-reveal style="text-align:center;margin-bottom:30px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.18em;color:#5AAFE0;">FLOW</div>
+      <h2 style="font-family:'Zen Old Mincho',serif;font-size:24px;font-weight:700;margin-top:8px;color:#2f444f;">施術の流れ</h2>
+    </div>
+    <div data-lp-narrow style="position:relative;padding-left:8px;">
+      <div style="position:absolute;left:25px;top:14px;bottom:14px;width:2px;background:linear-gradient(180deg,#9fd0ea,#b6ddaa);"></div>
+      <div data-reveal style="position:relative;display:flex;gap:18px;align-items:flex-start;padding-bottom:22px;">
+        <div style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid #5AAFE0;color:#3E8FC4;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;z-index:1;">1</div>
+        <div style="padding-top:6px;"><h3 style="font-size:15.5px;font-weight:700;color:#34464F;">WEBで予約</h3></div>
+      </div>
+      <div data-reveal style="position:relative;display:flex;gap:18px;align-items:flex-start;padding-bottom:22px;">
+        <div style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid #5AAFE0;color:#3E8FC4;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;z-index:1;">2</div>
+        <div style="padding-top:6px;"><h3 style="font-size:15.5px;font-weight:700;color:#34464F;">ご来院・受付</h3></div>
+      </div>
+      <div data-reveal style="position:relative;display:flex;gap:18px;align-items:flex-start;padding-bottom:22px;">
+        <div style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid #5AAFE0;color:#3E8FC4;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;z-index:1;">3</div>
+        <div style="padding-top:6px;"><h3 style="font-size:15.5px;font-weight:700;color:#34464F;">医師による問診・適応確認</h3></div>
+      </div>
+      <div data-reveal style="position:relative;display:flex;gap:18px;align-items:flex-start;padding-bottom:22px;">
+        <div style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid #5AAFE0;color:#3E8FC4;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;z-index:1;">4</div>
+        <div style="padding-top:6px;"><h3 style="font-size:15.5px;font-weight:700;color:#34464F;">点滴（約10〜15分）</h3><p style="margin-top:4px;font-size:12.5px;color:#7d909b;line-height:1.6;">リラックスしてお過ごしください。</p></div>
+      </div>
+      <div data-reveal style="position:relative;display:flex;gap:18px;align-items:flex-start;">
+        <div style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);border:2px solid #8FCB7F;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;z-index:1;">5</div>
+        <div style="padding-top:6px;"><h3 style="font-size:15.5px;font-weight:700;color:#34464F;">終了・お会計</h3><p style="margin-top:4px;font-size:12.5px;color:#7d909b;line-height:1.6;">ダウンタイムほぼなし、そのままお帰りいただけます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 料金一覧 ===== -->
+  <section data-screen-label="料金一覧" style="padding:52px 22px 10px;">
+    <div data-reveal style="text-align:center;margin-bottom:24px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.18em;color:#7FB86E;">PRICE</div>
+      <h2 style="font-family:'Zen Old Mincho',serif;font-size:24px;font-weight:700;margin-top:8px;color:#2f444f;">料金一覧</h2>
+      <p style="margin-top:6px;font-size:12px;color:#9bafba;">全メニュー・税込</p>
+    </div>
+    <div data-reveal data-lp-price-wrap style="border-radius:18px;overflow:hidden;border:1px solid #e7eef3;box-shadow:0 8px 22px rgba(70,120,150,.08);">
+      <table style="width:100%;border-collapse:collapse;font-size:13.5px;">
+        <thead>
+          <tr style="background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;">
+            <th style="text-align:left;padding:12px 14px;font-weight:700;font-size:12.5px;">メニュー</th>
+            <th style="text-align:right;padding:12px 8px;font-weight:700;font-size:12px;width:78px;">通常</th>
+            <th style="text-align:right;padding:12px 14px;font-weight:700;font-size:12px;width:84px;">初回</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#eef7fb;border-bottom:1px solid #e0eef5;"><td style="padding:13px 14px;color:#34464F;font-weight:700;">疲労回復点滴（ライト） <span style="font-size:10px;background:#F2AEC6;color:#fff;border-radius:4px;padding:2px 5px;vertical-align:middle;">人気</span></td><td style="padding:13px 8px;text-align:right;color:#9bafba;">3,500円</td><td style="padding:13px 14px;text-align:right;font-weight:900;color:#3E8FC4;">2,480円</td></tr>
+          <tr style="background:#f8fbfd;border-bottom:1px solid #eef3f6;"><td style="padding:12px 14px;color:#465963;font-weight:500;">疲労回復点滴（プレミアム）</td><td style="padding:12px 8px;text-align:right;color:#9bafba;">4,500円</td><td style="padding:12px 14px;text-align:right;color:#b6c4cc;">―</td></tr>
+          <tr style="background:#fff;border-bottom:1px solid #eef3f6;"><td style="padding:12px 14px;color:#465963;font-weight:500;">白玉点滴</td><td style="padding:12px 8px;text-align:right;color:#9bafba;">6,500円</td><td style="padding:12px 14px;text-align:right;font-weight:700;color:#3E8FC4;">3,980円</td></tr>
+          <tr style="background:#fff;border-bottom:1px solid #eef3f6;"><td style="padding:12px 14px;color:#465963;font-weight:500;">シンデレラ点滴</td><td style="padding:12px 8px;text-align:right;color:#9bafba;">8,000円</td><td style="padding:12px 14px;text-align:right;font-weight:700;color:#3E8FC4;">5,980円</td></tr>
+          <tr style="background:#f8fbfd;border-bottom:1px solid #eef3f6;"><td style="padding:12px 14px;color:#465963;font-weight:500;">高濃度ビタミンC点滴</td><td style="padding:12px 8px;text-align:right;color:#9bafba;">12,000円</td><td style="padding:12px 14px;text-align:right;font-weight:700;color:#3E8FC4;">8,800円</td></tr>
+          <tr style="background:#fff;border-bottom:1px solid #eef3f6;"><td style="padding:12px 14px;color:#465963;font-weight:500;">二日酔い点滴</td><td style="padding:12px 8px;text-align:right;color:#9bafba;">5,500円</td><td style="padding:12px 14px;text-align:right;color:#b6c4cc;">―</td></tr>
+          <tr style="background:#f8fbfd;"><td style="padding:12px 14px;color:#465963;font-weight:500;">ダイエットサポート点滴</td><td style="padding:12px 8px;text-align:right;color:#9bafba;">6,000円</td><td style="padding:12px 14px;text-align:right;color:#b6c4cc;">―</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p data-reveal style="margin-top:13px;font-size:11.5px;color:#94a8b2;line-height:1.7;">※初回価格は美容点滴が当院で初めての方・お一人様1回・1メニューのみ。<br>※すべて自由診療（保険適用外）です。</p>
+  </section>
+
+  <!-- ===== リスク・副作用 ===== -->
+  <section data-screen-label="リスク副作用" style="padding:40px 22px 8px;">
+    <div data-reveal data-lp-narrow style="background:#f6f8fa;border:1px solid #e7edf1;border-radius:18px;padding:22px;">
+      <h2 style="font-size:15px;font-weight:700;color:#52646e;margin-bottom:12px;">リスク・副作用について</h2>
+      <p style="font-size:12.5px;line-height:1.9;color:#6b7c86;">美容点滴・疲労回復点滴は自由診療であり、公的医療保険は適用されません。一般的な副作用として、注射部位の痛み・赤み・内出血・腫れなどが生じることがあります。いずれも多くは数日で軽快します。まれにアレルギー反応が起こる可能性があります。</p>
+      <div style="margin-top:14px;padding-top:14px;border-top:1px dashed #d8e1e7;">
+        <div style="font-size:12.5px;font-weight:700;color:#52646e;margin-bottom:8px;">受けられない場合がある方</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
+          <li style="font-size:12.5px;line-height:1.6;color:#6b7c86;padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#9bafba;">・</span>妊娠中・授乳中の方</li>
+          <li style="font-size:12.5px;line-height:1.6;color:#6b7c86;padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#9bafba;">・</span>点滴・薬剤でアレルギーを起こしたことがある方</li>
+          <li style="font-size:12.5px;line-height:1.6;color:#6b7c86;padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#9bafba;">・</span>特定の疾患・服薬中の方（必ず事前に医師へご相談ください）</li>
+        </ul>
+        <p style="margin-top:12px;font-size:12px;line-height:1.8;color:#8194a0;">高濃度ビタミンC点滴をご希望の方へ：体質によりG6PDという酵素の検査が必要となる場合があります。詳しくは診察時にご説明します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section data-screen-label="FAQ" data-lp-sec style="position:relative;margin-top:40px;padding:52px 22px;background:linear-gradient(180deg,#fbf6f8,#f3f9fc);overflow:hidden;">
+    <div data-reveal style="text-align:center;margin-bottom:24px;">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.18em;color:#D67896;">Q&amp;A</div>
+      <h2 style="font-family:'Zen Old Mincho',serif;font-size:24px;font-weight:700;margin-top:8px;color:#2f444f;">よくある質問</h2>
+    </div>
+    <div data-reveal data-lp-faq-grid style="display:flex;flex-direction:column;gap:11px;">
+      <details style="background:#fff;border-radius:14px;border:1px solid #eef4f8;overflow:hidden;">
+        <summary style="list-style:none;cursor:pointer;padding:16px 18px;font-size:14px;font-weight:700;color:#34464F;display:flex;gap:10px;align-items:flex-start;"><span style="color:#5AAFE0;font-family:'Zen Old Mincho',serif;">Q</span>1回で効果はありますか？</summary>
+        <div style="padding:0 18px 16px 40px;font-size:13px;line-height:1.85;color:#657983;">効果には個人差があります。コンディションを整えるには、継続して受けていただくことをおすすめしています。</div>
+      </details>
+      <details style="background:#fff;border-radius:14px;border:1px solid #eef4f8;overflow:hidden;">
+        <summary style="list-style:none;cursor:pointer;padding:16px 18px;font-size:14px;font-weight:700;color:#34464F;display:flex;gap:10px;align-items:flex-start;"><span style="color:#5AAFE0;font-family:'Zen Old Mincho',serif;">Q</span>にんにく注射のようなにおいはありますか？</summary>
+        <div style="padding:0 18px 16px 40px;font-size:13px;line-height:1.85;color:#657983;">メニューや成分により、施術直後にご自身だけがにおいを感じる場合がありますが、短時間で消えていきます。診察時にご説明します。</div>
+      </details>
+      <details style="background:#fff;border-radius:14px;border:1px solid #eef4f8;overflow:hidden;">
+        <summary style="list-style:none;cursor:pointer;padding:16px 18px;font-size:14px;font-weight:700;color:#34464F;display:flex;gap:10px;align-items:flex-start;"><span style="color:#5AAFE0;font-family:'Zen Old Mincho',serif;">Q</span>仕事帰りでも受けられますか？</summary>
+        <div style="padding:0 18px 16px 40px;font-size:13px;line-height:1.85;color:#657983;">はい。19時まで診療しており、点滴は短時間で終わります。祝日も診療しています。</div>
+      </details>
+      <details style="background:#fff;border-radius:14px;border:1px solid #eef4f8;overflow:hidden;">
+        <summary style="list-style:none;cursor:pointer;padding:16px 18px;font-size:14px;font-weight:700;color:#34464F;display:flex;gap:10px;align-items:flex-start;"><span style="color:#5AAFE0;font-family:'Zen Old Mincho',serif;">Q</span>整形外科の受診ついでに受けられますか？</summary>
+        <div style="padding:0 18px 16px 40px;font-size:13px;line-height:1.85;color:#657983;">はい。体のお悩みとあわせてご相談いただけます。受付でお申し付けください。</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== アクセス・最終CTA ===== -->
+  <section id="access" data-screen-label="アクセス" data-lp-access style="padding:52px 22px 40px;background:#FDFEFF;">
+    <div data-reveal style="text-align:center;margin-bottom:22px;">
+      <img src="assets/logo-stack.png" alt="目黒駅前ネスト整形外科" style="height:88px;width:auto;margin:0 auto;">
+    </div>
+    <div data-reveal style="border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(70,120,150,.14);margin-bottom:22px;">
+      <img src="assets/clinic.jpg" alt="院内" style="width:100%;height:180px;object-fit:cover;">
+    </div>
+    <div data-reveal style="background:#f6fafc;border:1px solid #e7eef3;border-radius:18px;padding:20px 22px;font-size:13.5px;line-height:2;color:#52646e;">
+      <div style="font-size:16px;font-weight:700;color:#34464F;margin-bottom:8px;">目黒駅前ネスト整形外科</div>
+      〒141-0021 東京都品川区上大崎2丁目12-2 目黒ミズホビル3階<br>
+      目黒駅 東口から徒歩2分（1階ファミリーマートが目印）<br>
+      <span style="font-weight:700;color:#3E8FC4;">TEL：03-5422-8596</span><br>
+      <span style="display:block;margin-top:8px;padding-top:8px;border-top:1px dashed #d8e1e7;font-size:12.5px;">診療時間：9:00-13:00 ／ 14:30-19:00<br>休診日：水曜（祝日も診療）</span>
+    </div>
+
+    <div data-reveal style="margin-top:16px;border-radius:18px;overflow:hidden;border:1px solid #e7eef3;box-shadow:0 8px 22px rgba(70,120,150,.1);">
+      <iframe title="目黒駅前ネスト整形外科 地図" src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%93%81%E5%B7%9D%E5%8C%BA%E4%B8%8A%E5%A4%A7%E5%B4%8E2-12-2&z=16&hl=ja&output=embed" style="width:100%;height:220px;border:0;display:block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <a href="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%93%81%E5%B7%9D%E5%8C%BA%E4%B8%8A%E5%A4%A7%E5%B4%8E2-12-2" target="_blank" rel="noopener" data-reveal style="display:flex;align-items:center;justify-content:center;gap:7px;margin-top:11px;height:46px;border-radius:999px;background:#fff;border:1.5px solid #cfe3f0;color:#3E8FC4;font-size:13.5px;font-weight:700;text-decoration:none;">
+      <span style="font-size:14px;">📍</span> Googleマップで見る
+    </a>
+
+    <div data-reveal style="margin-top:34px;text-align:center;">
+      <h2 style="font-family:'Zen Old Mincho',serif;font-size:26px;font-weight:700;line-height:1.5;color:#2f444f;">だるさに、まず2,480円。</h2>
+      <p style="margin-top:12px;font-size:14px;line-height:1.7;color:#5d717c;">医師が診る疲労回復点滴。<br>まずはお気軽にご予約ください。</p>
+      <div style="display:flex;flex-direction:column;gap:11px;margin-top:22px;">
+        <a href="#" data-cta="primary" style="display:flex;align-items:center;justify-content:center;gap:9px;height:60px;border-radius:999px;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;font-size:18px;font-weight:700;text-decoration:none;box-shadow:0 12px 26px rgba(90,175,224,.34);"><span style="font-size:13px;opacity:.9;">▶</span> WEB予約はこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="padding:24px 22px 30px;background:#eef3f6;text-align:center;">
+    <p style="font-size:11px;line-height:1.8;color:#8a9aa4;">本ページは自由診療（保険適用外）に関する案内です。効果には個人差があります。<br>© 目黒駅前ネスト整形外科</p>
+  </footer>
+
+  <!-- ===== STICKY BOTTOM CTA ===== -->
+  <div data-sticky-cta style="position:fixed;bottom:0;left:50%;transform:translateX(-50%) translateY(120%);width:100%;max-width:480px;z-index:50;padding:10px 12px 14px;background:rgba(253,254,255,.94);backdrop-filter:blur(12px);border-top:1px solid #e6eef3;box-shadow:0 -8px 24px rgba(70,120,150,.12);transition:transform .45s cubic-bezier(.22,1,.36,1);display:flex;gap:9px;">
+    <a href="#access" data-cta="primary" style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:54px;border-radius:999px;background:linear-gradient(135deg,#5AAFE0,#8FCB7F);color:#fff;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 8px 18px rgba(90,175,224,.32);"><span style="font-size:12px;">▶</span>WEB予約はこちら</a>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:480,&quot;height&quot;:900},&quot;primaryCtaColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ブルーグリーン&quot;,&quot;ブルー&quot;,&quot;ピンク&quot;],&quot;default&quot;:&quot;ブルーグリーン&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;CTA&quot;},&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;CTA&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = this.el || document;
+    const q = (s) => Array.from((root.querySelector ? root : document).querySelectorAll(s));
+
+    // ---- Tweak: primary CTA color ----
+    const theme = this.props.primaryCtaColor || 'ブルーグリーン';
+    const grad = {
+      'ブルーグリーン': 'linear-gradient(135deg,#5AAFE0,#8FCB7F)',
+      'ブルー': 'linear-gradient(135deg,#4a9fd6,#2f7fc0)',
+      'ピンク': 'linear-gradient(135deg,#F2AEC6,#ee8aa8)'
+    }[theme];
+    if (grad && theme !== 'ブルーグリーン') {
+      document.querySelectorAll('[data-cta="primary"]').forEach(el => { el.style.background = grad; });
+    }
+
+    // ---- Tweak: sticky CTA on/off ----
+    const sticky = document.querySelector('[data-sticky-cta]');
+    const showSticky = this.props.stickyCta !== false;
+
+    // ---- Scroll reveal ----
+    const reveals = Array.from(document.querySelectorAll('[data-reveal]'));
+    reveals.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(26px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1)';
+    });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    }
+
+    // ---- Sticky CTA visibility after hero ----
+    if (sticky && showSticky) {
+      const onScroll = () => {
+        if (window.scrollY > 360) {
+          sticky.style.transform = 'translateX(-50%) translateY(0)';
+        } else {
+          sticky.style.transform = 'translateX(-50%) translateY(120%)';
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      this._onScroll = onScroll;
+    }
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>
